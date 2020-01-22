@@ -1,0 +1,22 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<!-- <h1>{{ title }}</h1> -->
+<div class="row">
+    <div class="col-sm-4">
+        <a href="/Article/{{ doc.name }}">
+            <img src="{{ doc.image }}"
+                class="img-responsive" style="max-height: 200px">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <a href="/Article/{{ doc.name }}"><h4>{{ doc.article_name }}</h4></a>
+        <p>{{ doc.author }}</p>
+        <p>{{ (doc.descrption[:100000] + "...")
+            if doc.descrption|len > 10000 else doc.descrption }}</p>
+        <p class="text-muted">Publisher: {{ doc.publisher }}</p>
+    </div>
+</div>
+{% endblock %}
+
+<!-- this is a sample default web page template -->

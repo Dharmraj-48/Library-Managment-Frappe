@@ -14,22 +14,28 @@
   "language",
   "image",
   "section_break_9",
-  "descrption"
+  "descrption",
+  "publish",
+  "route"
  ],
  "fields": [
   {
    "fieldname": "article_name",
    "fieldtype": "Data",
-   "label": "Article Name"
+   "in_list_view": 1,
+   "label": "Article Name",
+   "reqd": 1
   },
   {
    "fieldname": "author",
    "fieldtype": "Data",
-   "label": "Author"
+   "in_list_view": 1,
+   "label": "Author",
+   "reqd": 1
   },
   {
    "fieldname": "isbn",
-   "fieldtype": "Data",
+   "fieldtype": "Barcode",
    "label": "ISBN"
   },
   {
@@ -37,18 +43,11 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Text",
-   "in_list_view": 1,
-   "label": "Status",
-   "length": 1,
-   "options": "Issued\nAvailable",
-   "reqd": 1
-  },
-  {
    "fieldname": "publisher",
    "fieldtype": "Data",
-   "label": "Publisher"
+   "in_list_view": 1,
+   "label": "Publisher",
+   "reqd": 1
   },
   {
    "fieldname": "language",
@@ -68,10 +67,29 @@
    "fieldname": "descrption",
    "fieldtype": "Text Editor",
    "label": "Descrption"
+  },
+  {
+   "default": "0",
+   "fieldname": "publish",
+   "fieldtype": "Check",
+   "label": "Publish"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Issued\nReturned"
   }
  ],
+ "has_web_view": 1,
+ "is_published_field": "publish",
  "links": [],
- "modified": "2020-01-22 12:00:08.831025",
+ "modified": "2020-01-22 16:56:14.381729",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Artical",
@@ -103,8 +121,9 @@
   }
  ],
  "quick_entry": 1,
+ "route": "article",
  "search_fields": "article_name",
  "sort_field": "modified",
  "sort_order": "ASC",
- "track_changes": 1
+ "title_field": "article_name"
 }
